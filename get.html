@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title>查看用户留言</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style>
+			*{margin:0;padding:0;}
+		</style>
+	</head>
+	<body>		
+		<div>name:<span  id="name"></span></div>
+		<div>email:<spanp id="email"></span></div>
+		<button id="callback" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">返回</button>
+	</body>
+	<script>
+		var myData = window.localStorage;
+		var localName = document.getElementById('name');
+		var localEmail = document.getElementById('email');
+		var callback = document.getElementById('callback');
+		var getName = '';
+		var getEmail = '';
+		
+		getName = myData.getItem('name');
+		getEmail = myData.getItem('email');
+		localName.innerText = getName;			
+		localEmail.innerText = getEmail;
+		callback.onclick = function(){
+			window.location.href = './index.html'
+		}
+	</script>
+</html>

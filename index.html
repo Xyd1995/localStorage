@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title>保存用户留言</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style>
+			*{margin:0;padding:0;}
+		</style>
+	</head>
+	<body>
+		<form class="form-inline">
+			<div class="form-group">
+		    	<label for="exampleInputName2">Name</label>
+		    	<input type="text" class="form-control" name="Name" id="exampleInputName2" placeholder="咸鸭蛋">
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="exampleInputEmail2">Email</label>
+		    	<input type="email" class="form-control" id="exampleInputEmail2" placeholder="752136881@qq.com">
+		  	</div>
+		  	<button id="xyd" type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">查看</button>
+		</form>
+	</body>
+	<script>
+//		创建localStorge 
+		var myData = window.localStorage;
+		
+		var xyd = document.getElementById('xyd');
+		//保存用户数据
+		var Name = document.getElementById('exampleInputName2');
+		var email = document.getElementById('exampleInputEmail2');
+		var myName = '';
+		var myemail = '';
+		
+//		定义方法
+		xyd.onclick = function(e){
+			e.preventDefault();
+			myName = Name.value;
+			myemail = email.value;
+			myData.setItem('name', myName);
+			myData.setItem('email', myemail);
+			window.location.href = './get.html'
+		}
+	</script>
+</html>
